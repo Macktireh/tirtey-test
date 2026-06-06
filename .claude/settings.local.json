@@ -19,7 +19,8 @@
       "Bash(rtk grep *)",
       "Bash(rtk pytest *)",
       "Bash(rtk git *)",
-      "Bash(rtk read *)"
+      "Bash(rtk read *)",
+      "WebFetch(domain:www.tirtey-reisen.de)"
     ]
   }
 }

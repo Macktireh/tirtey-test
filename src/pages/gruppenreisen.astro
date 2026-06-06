@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Gruppenreisen"
+  description="Gruppenreisen für Vereine und Gruppen mit dem Omnibusbetrieb Tirtey aus Titz-Rödingen. Wir helfen Ihnen gerne weiter!"
+>
+
+  <!-- Hero -->
+  <section class="relative h-[60vh] min-h-[380px] flex items-center justify-center overflow-hidden">
+    <img
+      src="https://picsum.photos/seed/group-journey/1920/900"
+      alt="Gruppenreise mit Tirtey Reisen"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-950/75 to-blue-900/75"></div>
+    <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-3">Tirtey Reisen</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Gruppenreisen</h1>
+      <p class="text-xl text-blue-200">Gemeinsam mehr erleben</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-50 border-b border-gray-200 px-4 py-3 text-sm text-gray-500">
+    <div class="max-w-5xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-blue-700 transition-colors">Startseite</a>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      <span class="text-gray-900 font-medium">Gruppenreisen</span>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+      <!-- Main text + image -->
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Gruppenreisen</h2>
+
+        <div class="md:flex gap-6 mb-6">
+          <div class="md:shrink-0 mb-5 md:mb-0">
+            <img
+              src="https://picsum.photos/seed/fahrt-ins-blaue/300/220"
+              alt="Fahrt ins Blaue"
+              class="rounded-xl shadow-md w-full md:w-40 object-cover"
+            />
+            <p class="text-xs text-gray-400 text-center mt-1">Fahrt ins Blaue</p>
+          </div>
+
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              Ihre Gruppe oder Verein möchte weg fahren?! Die Richtung ist vielleicht bekannt? Sie wissen nicht wohin mit dem Verein?! Oder haben ganz konkrete Vorstellungen für Ihren Ausflug?
+            </p>
+            <p>
+              Planen Sie eine Tagesfahrt, mehrere Tage, wandern oder Live-Musik....!?
+            </p>
+            <p>
+              Wir helfen Ihnen gerne weiter! Schreiben Sie uns ein paar Zeilen, vergessen Sie nicht Ihre Telefon-Nr. / Mailadresse – wir melden uns bei Ihnen!
+            </p>
+            <div class="pt-2">
+              <a href="/kontakt" class="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition-colors shadow-sm">
+                &gt;&gt;&gt; Kontakt hier
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+        <div class="bg-blue-50 border border-blue-100 rounded-2xl p-6">
+          <div class="text-4xl mb-3 text-center">👥</div>
+          <h4 class="font-bold text-gray-900 mb-3 text-center">Reisemöglichkeiten</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            {[
+              'Tagesfahrten',
+              'Mehrtagesreisen',
+              'Wanderausflüge',
+              'Live-Musik Events',
+              'Vereinsausflüge',
+              'Betriebsausflüge',
+              'Seniorenfahrten',
+              'Kirchenfahrten',
+            ].map(item => (
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-100 rounded-2xl shadow-sm p-6">
+          <h4 class="font-bold text-gray-900 mb-4">Kontakt</h4>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              <a href="tel:+492463991100" class="hover:text-blue-700 transition-colors">02463 / 99 11-0</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+              <a href="mailto:info@tirtey-reisen.de" class="hover:text-blue-700 transition-colors">info@tirtey-reisen.de</a>
+            </li>
+            <li class="text-gray-500 text-xs pl-6">Mo. – Fr.: 08:30 – 17:00 Uhr</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations gallery -->
+  <section class="py-14 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Reiseziele in Deutschland &amp; Europa</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          { label: 'Böhmisches Bäderdreieck', seed: 'bohemia-spa' },
+          { label: 'Rheintal', seed: 'rhine-valley' },
+          { label: 'Bayern &amp; Alpen', seed: 'bavaria-mountains' },
+          { label: 'Nordseeküste', seed: 'north-sea' },
+          { label: 'Österreich', seed: 'austria-alps' },
+          { label: 'Berlin &amp; Städte', seed: 'berlin-city' },
+        ].map(dest => (
+          <div class="relative rounded-xl overflow-hidden h-40 group">
+            <img
+              src={`https://picsum.photos/seed/${dest.seed}/500/350`}
+              alt={dest.label}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+              <span class="text-white font-semibold text-sm" set:html={dest.label} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 px-4 bg-amber-500 text-white text-center">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-bold mb-3">Wir helfen Ihnen gerne weiter!</h2>
+      <p class="text-amber-100 mb-6">Schreiben Sie uns ein paar Zeilen – wir melden uns bei Ihnen!</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="bg-white text-amber-600 hover:bg-amber-50 font-bold px-8 py-3 rounded-xl transition-colors inline-block shadow-md">
+          Jetzt anfragen
+        </a>
+        <a href="tel:+492463991100" class="bg-amber-700 hover:bg-amber-800 text-white font-bold px-8 py-3 rounded-xl transition-colors inline-block">
+          📞 02463 / 99 11-0
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

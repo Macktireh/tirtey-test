@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Busvermietung"
+  description="Busvermietung – Antragsformular des Omnibusbetriebs Tirtey aus Titz-Rödingen. Möglichkeit und Preise auf Anfrage."
+>
+
+  <!-- Hero -->
+  <section class="relative h-[50vh] min-h-[320px] flex items-center justify-center overflow-hidden">
+    <img
+      src="https://picsum.photos/seed/omnibus-highway/1920/800"
+      alt="Busvermietung Tirtey Reisen"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-950/75 to-blue-900/75"></div>
+    <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-3">Tirtey Reisen</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Busvermietung</h1>
+      <p class="text-xl text-blue-200">Möglichkeit und Preise</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-50 border-b border-gray-200 px-4 py-3 text-sm text-gray-500">
+    <div class="max-w-5xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-blue-700 transition-colors">Startseite</a>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      <span class="text-gray-900 font-medium">Busvermietung</span>
+    </div>
+  </nav>
+
+  <!-- Form section -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Busvermietung – Antragsformular</h2>
+        <p class="text-gray-500 text-sm mb-8">
+          Bitte bedenken Sie, dass die mit einem Stern <span class="text-red-500 font-bold">„*"</span> gekennzeichneten Felder Pflichtfelder sind und demnach ausgefüllt werden müssen!
+        </p>
+
+        <form class="space-y-8" novalidate>
+
+          <!-- Kontaktdaten -->
+          <fieldset class="border border-gray-200 rounded-xl p-6">
+            <legend class="text-sm font-semibold text-gray-700 px-2">Ihre Kontaktdaten</legend>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+
+              <!-- Left column -->
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="anrede">Anrede</label>
+                  <select id="anrede" name="anrede"
+                    class="w-full border border-gray-300 bg-white rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    <option value="Herr">Herr</option>
+                    <option value="Frau">Frau</option>
+                    <option value="Firma">Firma</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="vorname">Vorname</label>
+                  <input type="text" id="vorname" name="vorname" autocomplete="given-name"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="nachname">
+                    Nachname <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" id="nachname" name="nachname" required autocomplete="family-name"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="strasse">Straße</label>
+                  <input type="text" id="strasse" name="strasse" autocomplete="street-address"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5" for="plz">PLZ</label>
+                    <input type="number" id="plz" name="plz" maxlength="5" autocomplete="postal-code"
+                      class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1.5" for="ort">Ort</label>
+                    <input type="text" id="ort" name="ort" autocomplete="address-level2"
+                      class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right column -->
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="email">
+                    E-Mail <span class="text-red-500">*</span>
+                  </label>
+                  <input type="email" id="email" name="email" required autocomplete="email"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="telefon">Telefonnummer</label>
+                  <input type="tel" id="telefon" name="telefon" autocomplete="tel"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="nachricht">Nachricht</label>
+                  <textarea id="nachricht" name="nachricht" rows="7" resize="none"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <hr class="border-gray-200" />
+
+          <!-- Reisedaten -->
+          <fieldset class="border border-gray-200 rounded-xl p-6">
+            <legend class="text-sm font-semibold text-gray-700 px-2">Reisedaten</legend>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+
+              <!-- Left -->
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="abreise">
+                    Abreise am <span class="text-red-500">*</span>
+                    <span class="text-gray-400 font-normal text-xs ml-1">(tt.mm.jjjj hh:mm)</span>
+                  </label>
+                  <input type="text" id="abreise" name="abreise" required placeholder="10.11.2025 07:15"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <p class="text-xs text-gray-400 mt-1">Format: tt.mm.jjjj hh:mm (z.B. 10.11.2025 07:15)</p>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="abreiseort">
+                    Abreiseort <span class="text-red-500">*</span>
+                  </label>
+                  <textarea id="abreiseort" name="abreiseort" rows="2" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="personen">
+                    Anzahl Personen <span class="text-red-500">*</span>
+                  </label>
+                  <input type="number" id="personen" name="personen" required min="1" value="0"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <!-- Right -->
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="rueckreise">
+                    Rückreise am <span class="text-red-500">*</span>
+                    <span class="text-gray-400 font-normal text-xs ml-1">(tt.mm.jjjj hh:mm)</span>
+                  </label>
+                  <input type="text" id="rueckreise" name="rueckreise" required placeholder="11.11.2025 17:15"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <p class="text-xs text-gray-400 mt-1">Format: tt.mm.jjjj hh:mm (z.B. 11.11.2025 17:15)</p>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1.5" for="reiseziel">
+                    Ausflugsziel / gewünschter Reiseverlauf <span class="text-red-500">*</span>
+                  </label>
+                  <textarea id="reiseziel" name="reiseziel" rows="2" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  ></textarea>
+                </div>
+                <div>
+                  <fieldset>
+                    <legend class="block text-sm font-medium text-gray-700 mb-2">
+                      Bus vor Ort? <span class="text-red-500">*</span>
+                    </legend>
+                    <div class="flex gap-6">
+                      <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
+                        <input type="radio" name="bus_vor_ort" value="Ja" class="accent-blue-700" />
+                        Ja
+                      </label>
+                      <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
+                        <input type="radio" name="bus_vor_ort" value="Nein" class="accent-blue-700" />
+                        Nein
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Benachrichtigung -->
+          <div>
+            <fieldset>
+              <legend class="block text-sm font-medium text-gray-700 mb-2">
+                Benachrichtigung bitte per
+                <span class="text-gray-400 font-normal text-xs ml-1">(Denken Sie an die entspr. Rückmeldedaten)</span>
+              </legend>
+              <div class="flex flex-wrap gap-6">
+                {['Email', 'Telefon', 'Post'].map(opt => (
+                  <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
+                    <input type="radio" name="benachrichtigung" value={opt} class="accent-blue-700" />
+                    {opt}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Actions -->
+          <hr class="border-gray-200" />
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button type="reset"
+              class="flex-1 border border-gray-300 text-gray-600 hover:bg-gray-50 font-medium py-3 rounded-xl transition-colors text-sm"
+            >
+              Alle Felder löschen
+            </button>
+            <button type="submit"
+              class="flex-1 bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 rounded-xl transition-colors shadow-sm"
+            >
+              Nachricht absenden
+            </button>
+          </div>
+
+          <p class="text-xs text-gray-500 text-center">
+            Sie erhalten eine Kopie Ihrer Nachricht an Ihre oben eingetragene E-Mail-Adresse geschickt.<br />
+            <span class="text-red-500">*</span> = Pflichtfeld
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</Layout>

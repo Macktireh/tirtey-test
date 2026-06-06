@@ -1,0 +1,80 @@
+---
+const navLinks = [
+  { href: '/', label: 'Startseite' },
+  { href: '/schuelerreisen', label: 'Schülerreisen' },
+  { href: '/gruppenreisen', label: 'Gruppenreisen' },
+  { href: '/busvermietung', label: 'Busvermietung' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<nav class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+
+      <a href="/" class="flex items-center gap-1 shrink-0">
+        <span class="text-xl font-bold text-white tracking-tight">Tirtey</span>
+        <span class="text-xl font-bold text-amber-400 tracking-tight">Reisen</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-7">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`text-sm font-medium transition-colors hover:text-amber-400 ${
+              isActive(link.href) ? 'text-amber-400 border-b-2 border-amber-400 pb-0.5' : 'text-gray-200'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <button
+        id="menu-btn"
+        class="md:hidden p-2 rounded-md hover:bg-blue-800 transition-colors"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+      >
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-blue-800 py-3 space-y-1">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`block px-2 py-2 rounded-md text-sm font-medium transition-colors hover:bg-blue-800 hover:text-amber-400 ${
+            isActive(link.href) ? 'text-amber-400 bg-blue-800' : 'text-gray-200'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isHidden = menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(isHidden));
+  });
+</script>

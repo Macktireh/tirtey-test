@@ -1,5 +1,6 @@
 # build output
 dist/
+prompts/
 
 # generated types
 .astro/
