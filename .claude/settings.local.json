@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(pdm run ruff:*)",
+      "Bash(pdm show)",
+      "Bash(pdm run --list)",
+      "Bash(pdm add pypdf typer)",
+      "Bash(pdm add -dG test pytest)",
+      "Bash(pdm run test)",
+      "Bash(pdm add pillow)",
+      "Bash(awk -F/ '{ *)",
+      "Bash(Get-ChildItem -Path \"E:\\\\develop\\\\projects\\\\side\\\\tirtey-test\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Json)",
+      "Bash(Write-Output)",
+      "Bash(rtk find *)",
+      "Bash(rtk ls *)",
+      "Bash(rtk grep *)",
+      "Bash(rtk pytest *)",
+      "Bash(rtk git *)",
+      "Bash(rtk read *)"
+    ]
+  }
+}
